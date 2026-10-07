@@ -1,0 +1,17 @@
+.DS_Store
+.idea/
+.vscode/
+*.iml
+
+server/target/
+server/data/
+server/uploads/
+server/*.log
+
+web/node_modules/
+web/dist/
+web/.vite/
+
+.env
+.env.*
+*.log

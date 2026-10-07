@@ -1,0 +1,15 @@
+# 启动方式：mvn spring-boot:run -Dspring-boot.run.profiles=mysql
+# 先准备好数据库，可以用项目根目录的 docker compose。
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/learnlab?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: learnlab
+    password: learnlab
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  h2:
+    console:
+      enabled: false
+
+logging:
+  level:
+    org.hibernate.SQL: debug

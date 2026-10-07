@@ -1,0 +1,17 @@
+# 默认开发库：H2 文件数据库，数据在 server/data，重启还在。
+# 浏览器控制台：http://localhost:8080/h2-console
+# JDBC URL 必须和下面这条完全一致，用户名 sa，密码留空。
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/learnlab;MODE=MySQL;DATABASE_TO_LOWER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+logging:
+  level:
+    org.hibernate.SQL: debug

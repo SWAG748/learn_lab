@@ -1,0 +1,22 @@
+# 可选。只有在你想把数据库从 H2 换成 MySQL 时才需要。
+# 启动：docker compose up -d
+# 然后后端使用 mysql 配置：见 README「换成 MySQL」
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: learnlab-mysql
+    environment:
+      MYSQL_DATABASE: learnlab
+      MYSQL_USER: learnlab
+      MYSQL_PASSWORD: learnlab
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - learnlab-mysql:/var/lib/mysql
+
+volumes:
+  learnlab-mysql:
